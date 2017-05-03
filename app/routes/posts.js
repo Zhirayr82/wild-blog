@@ -21,6 +21,7 @@ module.exports = (app) => {
 
     //POST (for CREATE) method
     app.post('/posts', (req, res, next) => {
+        console.log(req)
         return ctrl.create(req, res, next)
     })
 

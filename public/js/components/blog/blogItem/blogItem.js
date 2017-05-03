@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 /*
 Create Angular component blogItem into module app.blog with databinding properties
 - post : post data for all content
@@ -59,11 +61,12 @@ let blogItem = {
         this.save = () => {
             // Call save method form PostsService with post
             PostsService.save(this.post).then((res) => {
-                // Change editMode value to false
-                this.editMode = false
+
+                this.editMode = true
                 if (!this.post._id) {
                     // if it's new post (when post._id doesn't exist) we affect to post variable response data (post created)
                     this.post = res.data
+                    console.log(res.data)
                 }
             })
         }
@@ -82,7 +85,7 @@ let blogItem = {
 
         this.isFav = () => {
             if (!this.post) return
-            return (this.user.bookmarks.find((post_id) => post_id.id === this.post._id))
+                return (this.user.bookmarks.find((post_id) => post_id.id === this.post._id))
         }
 
         this.addOrRemoveToBookmark = () => {
