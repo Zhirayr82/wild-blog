@@ -11,9 +11,15 @@ let Post = require('../models/post')
 class PostsController extends Controller {
 
 
-    constructor() {
-        super(Post)
-    }
+	constructor() {
+		super(Post)
+	}
+
+// 	find(req, res, next) {
+//     // we should use a global config file for nbOfPostsByPage
+
+//     let query = this.model.find();
+// }
 
 }
 

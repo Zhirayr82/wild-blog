@@ -34,11 +34,11 @@ app.use(logger('combined'));
 // Set parser to get the body data request
 // ref: https://www.npmjs.com/package/body-parser
 app.use(bodyParser.urlencoded({
-    'extended': 'true'
+  'extended': 'true'
 }))
 app.use(bodyParser.json())
 app.use(bodyParser.json({
-    type: 'application/vnd.api+json'
+  type: 'application/vnd.api+json'
 }));
 
 // Set parser for cookies, same logic as bodyParser but for cookies
@@ -77,6 +77,7 @@ app.use((error, request, response, next) => {
   response.status(error.status || 500).send(error.message)
 })
 
+
 //Export function startServer with port, path and callback params it's used by brunch
 // brunch? -> https://www.npmjs.com/package/brunch
 // Brunch is not used here but it is good to know it
@@ -90,7 +91,7 @@ exports.startServer = (port, path, callback) => {
 
     //Intercept when application killed
     process.on('SIGINT', function() {
-        console.log("\nStopping...")
-        process.exit()
+      console.log("\nStopping...")
+      process.exit()
     });
-}
+  }

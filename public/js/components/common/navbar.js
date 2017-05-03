@@ -1,3 +1,7 @@
+import moment from 'moment'
+
+let now = moment().format('llll');
+
 let navbar = {
     templateUrl: 'js/components/common/navbar.html',
     controller: ['UsersService', '$state', function(UsersService, $state) {
@@ -19,6 +23,10 @@ let navbar = {
             }
 
         })
+
+        this.date = now;
+        console.log(now)
+
     }]
 }
 

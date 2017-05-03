@@ -1,6 +1,6 @@
 module.exports = {
     "development": {
-        db: process.env.MONGODB_URI ||  require('./dev').db,
+        db: process.env.MONGODB_URI ||  'mongodb://localhost:27017/blog',
         secretToken: process.env.SECRET_TOKEN || 'secretToken',
         env: 'development',
         facebookAuth: {
